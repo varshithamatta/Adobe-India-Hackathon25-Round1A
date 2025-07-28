@@ -31,14 +31,14 @@ The workflow is fully automated: all PDF files placed in the `/input` folder wil
 
 Make sure `index.py`, `extractor.py`, `requirements.txt`, and `Dockerfile` are in the same directory. Then build the Docker image:
 
-docker build -t pdf-outline-extractor .
+`docker build -t pdf-outline-extractor .`
 
 
 ### Run Container for Batch Processing
 
 Mount your local `input` and `output` directories and run the container:
 
-docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output pdf-outline-extractor
+`docker run --rm -v $(pwd)/input:/app/input -v $(pwd)/output:/app/output pdf-outline-extractor`
 
 - Put all your PDFs inside the `input/` folder.
 - Extracted outlines will appear as JSON files in `output/`, sharing the same base filename as the source PDFs.
